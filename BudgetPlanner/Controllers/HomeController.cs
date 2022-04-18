@@ -1,4 +1,5 @@
-﻿using BudgetPlanner.Models;
+﻿using BudgetPlanner.Database;
+using BudgetPlanner.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,10 +12,12 @@ namespace BudgetPlanner.Controllers
 {
   public class HomeController : Controller
   {
+    private readonly DBManager _dBManager;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, DBManager dBManager)
     {
+      dBManager = _dBManager;
       _logger = logger;
     }
 
@@ -23,7 +26,22 @@ namespace BudgetPlanner.Controllers
       return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult Index(Transactions transactions)
+    {
+
+      //if (string.IsNullOrEmpty(transactions.ID.ToString()))
+      //{
+      //  return View();
+      //}
+      //TESTING PURPOSES
+
+
+      return View();
+    }
+
+
+      public IActionResult Privacy()
     {
       return View();
     }

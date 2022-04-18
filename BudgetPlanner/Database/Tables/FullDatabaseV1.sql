@@ -7,25 +7,25 @@ GO
 DROP TABLE IF EXISTS dbo.Accounts
 
 CREATE TABLE [dbo].[Accounts](
-	[id] [INT] NOT NULL,
+	[AccountID] [INT] NOT NULL,
 	[type] [VARCHAR] (60) NOT NULL,
 );
 GO
 
 ALTER TABLE dbo.Accounts
-ADD CONSTRAINT [PK_Accounts] PRIMARY KEY CLUSTERED ([id] ASC);
+ADD CONSTRAINT [PK_Accounts] PRIMARY KEY CLUSTERED ([AccountID] ASC);
 GO
 
 DROP TABLE IF EXISTS dbo.Categories
 
 CREATE TABLE [dbo].[Categories](
-	[id] [INT] NOT NULL,
+	[categoryID] [INT] NOT NULL,
 	[type] [VARCHAR] (60) NOT NULL,
 );
 GO
 
 ALTER TABLE dbo.Categories
-ADD CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED ([id] ASC);
+ADD CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED ([categoryID] ASC);
 GO
 
 DROP TABLE IF EXISTS [dbo].[Users]
@@ -44,7 +44,7 @@ GO
 DROP TABLE IF EXISTS dbo.[Transactions]
 
 CREATE TABLE [dbo].[Transactions](
-	[id] [INT] NOT NULL,
+	[TransactionID] [INT] NOT NULL,
 	[amount] [DECIMAL] (18,2) NOT NULL,
 	[account] [INT],
 	[categories] [INT], 
@@ -54,16 +54,16 @@ CREATE TABLE [dbo].[Transactions](
 GO
 
 ALTER TABLE dbo.Transactions
-ADD CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED ([id] ASC);
+ADD CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED ([TransactionID] ASC);
 GO
 
 ALTER TABLE dbo.Transactions
 ADD CONSTRAINT FK_account
-FOREIGN KEY (account) REFERENCES Accounts(id);
+FOREIGN KEY (account) REFERENCES Accounts(AccountID);
 
 ALTER TABLE dbo.Transactions
 ADD CONSTRAINT FK_categories
-FOREIGN KEY (categories) REFERENCES Categories(id);
+FOREIGN KEY (categories) REFERENCES Categories(categoryID);
 
 ALTER TABLE dbo.Transactions
 ADD CONSTRAINT FK_user
