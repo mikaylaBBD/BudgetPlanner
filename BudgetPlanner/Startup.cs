@@ -32,8 +32,8 @@ namespace BudgetPlanner
       services.AddControllersWithViews();
       services.AddRazorPages();
 
-      //services.AddDbContext<DBManager>(options =>
-      //  options.UseSqlServer(Configuration.GetConnectionString("BudgetContext")));
+      services.AddDbContext<DBManager>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("BudgetContext")));
 
       // Add authentication services
       services.AddAuthentication(options => {
