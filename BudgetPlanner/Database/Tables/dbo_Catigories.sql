@@ -3,8 +3,10 @@ GO
  DROP TABLE IF EXISTS dbo.Categories
 
 CREATE TABLE [dbo].[Categories](
-	[id] [INT] NOT NULL,
-	[type] [VARCHAR] (60) NOT NULL,
-	PRIMARY KEY CLUSTERED ([id])
+	[categoryID] [INT] NOT NULL,
+	[categoryName] [VARCHAR] (50) NOT NULL,
+	[categoryGoal] [DECIMAL] (18,2) NOT NULL,
+	[categoryProgress] [DECIMAL] (18,2) NOT NULL
+	PRIMARY KEY CLUSTERED ([categoryID])
 )
 	
