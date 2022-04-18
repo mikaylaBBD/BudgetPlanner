@@ -1,3 +1,4 @@
+using BudgetPlanner.Database;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace BudgetPlanner
 {
@@ -29,6 +31,9 @@ namespace BudgetPlanner
     {
       services.AddControllersWithViews();
       services.AddRazorPages();
+
+      services.AddDbContext<DBManager>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("BudgetContext")));
 
       // Add authentication services
       services.AddAuthentication(options => {
