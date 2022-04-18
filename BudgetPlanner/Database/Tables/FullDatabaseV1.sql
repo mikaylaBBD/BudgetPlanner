@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS dbo.Accounts
 
 CREATE TABLE [dbo].[Accounts](
 	[AccountID] [INT] NOT NULL,
-	[type] [VARCHAR] (60) NOT NULL,
+	[AccountType] [VARCHAR] (60) NOT NULL,
 );
 GO
 
@@ -19,25 +19,25 @@ GO
 DROP TABLE IF EXISTS dbo.Categories
 
 CREATE TABLE [dbo].[Categories](
-	[categoryID] [INT] NOT NULL,
-	[type] [VARCHAR] (60) NOT NULL,
+	[CategoryID] [INT] NOT NULL,
+	[CategoryName] [VARCHAR] (60) NOT NULL,
 );
 GO
 
 ALTER TABLE dbo.Categories
-ADD CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED ([categoryID] ASC);
+ADD CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED ([CategoryID] ASC);
 GO
 
 DROP TABLE IF EXISTS [dbo].[Users]
 
 CREATE TABLE [dbo].[Users](
-	[username] [VARCHAR] (100) NOT NULL,
-	[token] [VARCHAR] (200) NOT NULL
+	[UserName] [VARCHAR] (100) NOT NULL,
+	[Token] [INT] NOT NULL
 );
 GO
 
 ALTER TABLE dbo.Users
-ADD CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([token] ASC);
+ADD CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Token] ASC);
 GO
 
 
@@ -45,11 +45,11 @@ DROP TABLE IF EXISTS dbo.[Transactions]
 
 CREATE TABLE [dbo].[Transactions](
 	[TransactionID] [INT] NOT NULL,
-	[amount] [DECIMAL] (18,2) NOT NULL,
-	[account] [INT],
-	[categories] [INT], 
-	[user] [VARCHAR](200),
-    [Date] [VARCHAR](11)
+	[TransactionAmount] [DECIMAL] (18,2) NOT NULL,
+	[AccountID] [INT],
+	[CategoryID] [INT], 
+	[Token] [INT],
+    [TransactionDate] [VARCHAR](11)
 );
 GO
 
@@ -58,20 +58,20 @@ ADD CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED ([TransactionID] ASC);
 GO
 
 ALTER TABLE dbo.Transactions
-ADD CONSTRAINT FK_account
-FOREIGN KEY (account) REFERENCES Accounts(AccountID);
+ADD CONSTRAINT FK_AccountID
+FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID);
 
 ALTER TABLE dbo.Transactions
-ADD CONSTRAINT FK_categories
-FOREIGN KEY (categories) REFERENCES Categories(categoryID);
+ADD CONSTRAINT FK_CategoryID
+FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID);
 
 ALTER TABLE dbo.Transactions
-ADD CONSTRAINT FK_user
-FOREIGN KEY ([user]) REFERENCES Users(token);
+ADD CONSTRAINT FK_token
+FOREIGN KEY ([Token]) REFERENCES Users(Token);
 
 INSERT INTO [dbo].[Accounts]
-           ([id],
-            [type]
+           ([AccountID],
+            [AccountType]
            )
 		   VALUES    (1, 'Credit'),
            (2, 'Cheque'),
@@ -79,8 +79,8 @@ INSERT INTO [dbo].[Accounts]
 GO
 	
 INSERT INTO [dbo].[Categories]
-           ([id],
-           [type]
+           ([CategoryID],
+           [CategoryName]
            )
 		   VALUES    (1, 'Groceries'),
            (2, 'Internet'),
@@ -91,8 +91,8 @@ INSERT INTO [dbo].[Categories]
 GO
 
 INSERT INTO [dbo].[Users]
-           ([username],
-           [token]
+           ([UserName],
+           [Token]
            )
 		   VALUES    ('Bob', 1),
            ('Chris', 2),
@@ -100,12 +100,12 @@ INSERT INTO [dbo].[Users]
 GO
 
 INSERT INTO [dbo].[Transactions]
-           ([id],
-           [amount],
-           [account],
-           [categories],
-           [user],
-           [Date]
+           ([TransactionID],
+           [TransactionAmount],
+           [AccountID],
+           [CategoryID],
+           [Token],
+           [TransactionDate]
            )
 		   VALUES    (1, '500.00', 1, 1, 1, '2021-12-05'),
            (2, '200.00', 2, 1, 1, '2021-12-08'),

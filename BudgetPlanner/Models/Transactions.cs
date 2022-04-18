@@ -21,8 +21,8 @@ namespace BudgetPlanner.Models
     public int CategoryID { get; set; }
 
     [ForeignKey("Users")]
-    public int UserID { get; set; }
+    public int Token { get; set; }
 
-    public DateTime TransactionDate { get; set; }
+    public string TransactionDate { get; set; }
   }
 }

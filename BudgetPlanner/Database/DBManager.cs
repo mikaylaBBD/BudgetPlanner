@@ -17,7 +17,6 @@ namespace BudgetPlanner.Database
 
     public DbSet<Models.Accounts> Accounts { get; set; }
     public DbSet<Models.Categories> Categories { get; set; }
-    public DbSet<Models.Goals> Goals { get; set; }
     public DbSet<Models.Transactions> Transactions { get; set; }
     public DbSet<Models.Users> Users { get; set; }
 

@@ -17,12 +17,13 @@ namespace BudgetPlanner.Controllers
 
     public HomeController(ILogger<HomeController> logger, DBManager dBManager)
     {
-      dBManager = _dBManager;
+      _dBManager = dBManager;
       _logger = logger;
     }
 
     public IActionResult Index()
     {
+      Console.WriteLine(_dBManager.Transactions.Find(1).TransactionAmount.ToString());
       return View();
     }
 
@@ -34,8 +35,6 @@ namespace BudgetPlanner.Controllers
       //{
       //  return View();
       //}
-      //TESTING PURPOSES
-
 
       return View();
     }

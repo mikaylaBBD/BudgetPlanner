@@ -8,11 +8,8 @@ namespace BudgetPlanner.Models
 {
   public class Users
   {
-    [Key]
-    public int UserID { get; set; }
-
     public string UserName { get; set; }
-
+    [Key]
     public string Token { get; set; }
     }
 }

@@ -9,12 +9,12 @@ namespace BudgetPlanner.Models
   public class Categories
   {
     [Key]
-    public int categoryID { get; set; }
+    public int CategoryID { get; set; }
 
     public string CategoryName { get; set; }
 
-    public decimal CategoryGoal { get; set; }
+    //public decimal CategoryGoal { get; set; }
 
-    public decimal CategoryProgress { get; set; }
+    //public decimal CategoryProgress { get; set; }
   }
 }
