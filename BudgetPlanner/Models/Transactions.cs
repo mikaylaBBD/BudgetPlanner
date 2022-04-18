@@ -10,20 +10,19 @@ namespace BudgetPlanner.Models
   public class Transactions
   {
     [Key]
-    public int ID { get; set; }
+    public int TransactionID { get; set; }
 
-    public decimal Amount { get; set; }
+    public decimal TransactionAmount { get; set; }
 
     [ForeignKey("Accounts")]
     public int AccountID { get; set; }
-
-    [ForeignKey("Goals")]
-    public int GoalID { get; set; }
 
     [ForeignKey("Category")]
     public int CategoryID { get; set; }
 
     [ForeignKey("Users")]
     public int UserID { get; set; }
+
+    public DateTime TransactionDate { get; set; }
   }
 }

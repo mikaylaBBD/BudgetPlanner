@@ -3,8 +3,10 @@ GO
  DROP TABLE IF EXISTS dbo.Accounts
 
 CREATE TABLE [dbo].[Accounts](
-	[id] [INT] NOT NULL,
-	[type] [VARCHAR] (60) NOT NULL,
-	PRIMARY KEY CLUSTERED ([id])
+	[accountID] [INT] NOT NULL,
+	[userID] [INT] FOREIGN KEY REFERENCES  [dbo].[Users](userID),
+	[accountType] [VARCHAR] (50) NOT NULL,
+	[accountName] [VARCHAR](50) NOT NULL
+	PRIMARY KEY CLUSTERED ([accountID])
 )
 	
