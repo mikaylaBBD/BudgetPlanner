@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj": {}
+    "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {}
   },
   "projects": {
-    "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj": {
+    "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj",
+        "projectUniqueName": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
         "projectName": "BudgetPlanner",
-        "projectPath": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj",
-        "packagesPath": "/Users/xander/.nuget/packages/",
-        "outputPath": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/obj/",
+        "projectPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
+        "packagesPath": "C:\\Users\\bbdnet2584\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/xander/.config/NuGet/NuGet.Config"
+          "C:\\Users\\bbdnet2584\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

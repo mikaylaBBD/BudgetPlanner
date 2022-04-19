@@ -2,18 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-left">
-    <div class="h1  mt-5">Account: </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Account
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">John Cena</a>
-            <a class="dropdown-item" href="#">Other Account</a>
-            <a class="dropdown-item" href="#">Someone Else</a>
-        </div>
-    </div>
+<tr>
+    <td> Populating With ViewBag Data </td>
+    <td>
+        @Html.DropDownList("MySkills", (IEnumerable
+       <SelectListItem>)ViewBag.Users)
+    </td>
+</tr>
     <div class="h1 mt-5">Categories</div>
     <ul>
         <li>

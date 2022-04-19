@@ -10,6 +10,6 @@ namespace BudgetPlanner.Models
   {
     public string UserName { get; set; }
     [Key]
-    public string Token { get; set; }
+    public int Token { get; set; }
     }
 }

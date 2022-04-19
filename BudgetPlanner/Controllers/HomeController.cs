@@ -1,6 +1,7 @@
 ﻿using BudgetPlanner.Database;
 using BudgetPlanner.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -25,40 +26,49 @@ namespace BudgetPlanner.Controllers
     {
       Console.WriteLine(_dBManager.Transactions.Find(1).TransactionAmount.ToString());
 
-
-      List<Transactions> AllTransactions = new List<Transactions>();
-
-      foreach (Transactions transactions1 in _dBManager.Transactions)
-      {
-        AllTransactions.Add(transactions1);
-      }
-
-      List<string> users = new List<string>();
-
-      foreach(Users user in _dBManager.Users)
-      {
-        users.Add(user.UserName);
-      }
-
-      ViewBag.Users = users; //For Dropdown
-      ViewBag.BobTransactions = AllTransactions.Where(x => x.Token == 1);
-      ViewBag.ChrisTransactions = AllTransactions.Where(x => x.Token == 2);
-      ViewBag.JamesTransactions = AllTransactions.Where(x => x.Token == 3);
-
-
+      ViewBag.Users = new SelectList(_dBManager.Users, nameof(Users.Token).ToString(), nameof(Users.UserName)); ; //For Dropdown
 
       return View();
     }
 
-    [HttpPost]
-    public IActionResult Index(Transactions transactions)
-    {
+    //[HttpPost]
+    //public IActionResult Index(Users user)
+    //{
+    //  user.UserName = "James";
+    //  if(string.IsNullOrEmpty(user.UserName))
+    //  {
+    //    return View();
+    //  }
+    //  string name = user.UserName;
 
-      return View();
-    }
+    //  List<Users> users = new List<Users>();
+
+    //  foreach (Users user1 in _dBManager.Users)
+    //  {
+    //    users.Add(user1);
+    //  }
+
+    //  int user2 = users.FindIndex(x => x.UserName == name);
+
+    //  Console.WriteLine(user2);
+
+    //  List<Transactions> AllTransactions = new List<Transactions>();
+
+    //  foreach (Transactions transactions1 in _dBManager.Transactions)
+    //  {
+    //    AllTransactions.Add(transactions1);
+    //  }
+
+    //  ViewBag.Users = new SelectList(_dBManager.Users, nameof(Users.Token), nameof(Users.UserName)); ; //For Dropdown
+    //  ViewBag.UserTransactions = AllTransactions.Where(x => x.Token == 1).ToList();
 
 
-      public IActionResult Privacy()
+
+    //  return View();
+    //}
+
+
+    public IActionResult Privacy()
     {
       return View();
     }
