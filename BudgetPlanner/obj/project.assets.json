@@ -5910,31 +5910,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbdnet2584\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/xander/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
+      "projectUniqueName": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj",
       "projectName": "BudgetPlanner",
-      "projectPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
-      "packagesPath": "C:\\Users\\bbdnet2584\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\obj\\",
+      "projectPath": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/BudgetPlanner.csproj",
+      "packagesPath": "/Users/xander/.nuget/packages/",
+      "outputPath": "/Users/xander/dev/bbd/BudgetPlanner/BudgetPlanner/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\bbdnet2584\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/xander/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5988,7 +5981,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
       }
     }
   }

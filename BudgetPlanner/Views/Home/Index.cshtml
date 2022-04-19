@@ -2,7 +2,44 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-left">
+    <div class="h1  mt-5">Account: </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Account
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">John Cena</a>
+            <a class="dropdown-item" href="#">Other Account</a>
+            <a class="dropdown-item" href="#">Someone Else</a>
+        </div>
+    </div>
+    <div class="h1 mt-5">Categories</div>
+    <ul>
+        <li>
+            Entertainment: R 100,000 (Month to date: R80,000 (80%))
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </li>
+    </ul>
+    <div class="h1  mt-5">Transactions</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>12 March 2022</td>
+                <td>Entertainment</td>
+                <td>R 20,000</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
