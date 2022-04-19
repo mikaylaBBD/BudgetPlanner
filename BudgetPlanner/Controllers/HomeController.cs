@@ -24,17 +24,35 @@ namespace BudgetPlanner.Controllers
     public IActionResult Index()
     {
       Console.WriteLine(_dBManager.Transactions.Find(1).TransactionAmount.ToString());
+
+
+      List<Transactions> AllTransactions = new List<Transactions>();
+
+      foreach (Transactions transactions1 in _dBManager.Transactions)
+      {
+        AllTransactions.Add(transactions1);
+      }
+
+      List<string> users = new List<string>();
+
+      foreach(Users user in _dBManager.Users)
+      {
+        users.Add(user.UserName);
+      }
+
+      ViewBag.Users = users; //For Dropdown
+      ViewBag.BobTransactions = AllTransactions.Where(x => x.Token == 1);
+      ViewBag.ChrisTransactions = AllTransactions.Where(x => x.Token == 2);
+      ViewBag.JamesTransactions = AllTransactions.Where(x => x.Token == 3);
+
+
+
       return View();
     }
 
     [HttpPost]
     public IActionResult Index(Transactions transactions)
     {
-
-      //if (string.IsNullOrEmpty(transactions.ID.ToString()))
-      //{
-      //  return View();
-      //}
 
       return View();
     }
