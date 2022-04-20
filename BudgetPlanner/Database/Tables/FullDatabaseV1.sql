@@ -21,6 +21,8 @@ DROP TABLE IF EXISTS dbo.Categories
 CREATE TABLE [dbo].[Categories](
 	[CategoryID] [INT] NOT NULL,
 	[CategoryName] [VARCHAR] (60) NOT NULL,
+    [CategoryGoal] [DECIMAL] (18,2) NOT NULL,
+    [userID] [INT] FOREIGN KEY REFERENCES  [dbo].[Users](Token)
 );
 GO
 
@@ -80,14 +82,16 @@ GO
 	
 INSERT INTO [dbo].[Categories]
            ([CategoryID],
-           [CategoryName]
+           [CategoryName],
+           [CategoryGoal],
+           [userID]
            )
-		   VALUES    (1, 'Groceries'),
-           (2, 'Internet'),
-           (3, 'Cellphone'),
-           (4, 'Clothing'),
-           (5, 'Entertainment'),
-           (6, 'Tech and Appliances')
+		   VALUES    (1, 'Groceries', 10000.00,1),
+           (2, 'Internet',100000.00,1),
+           (3, 'Cellphone',1000.00,2),
+           (4, 'Clothing',2600,2),
+           (5, 'Entertainment',1,5000),
+           (6, 'Tech and Appliances',3,1000)
 GO
 
 INSERT INTO [dbo].[Users]
