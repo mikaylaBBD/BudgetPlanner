@@ -26,7 +26,33 @@ namespace BudgetPlanner.Controllers
     {
       ViewBag.Users = new SelectList(_dBManager.Users, nameof(Users.Token).ToString(), nameof(Users.UserName)); ; //For Dropdown
 
-      return View();
+
+            //get trasaction sum for a specific month  
+            //get all trasactions
+            List<Transactions> AllTransactions = new List<Transactions>();
+
+            foreach (Transactions transactions1 in _dBManager.Transactions)
+            {
+                AllTransactions.Add(transactions1);
+            }
+
+            var x = AllTransactions.Where(x => x.Token == 1 && x.CategoryID == 1 && x.TransactionDate.Substring(5,2) == "11").ToList();
+            decimal sumTrans=0;
+
+
+            foreach (Transactions tran in x) {
+                sumTrans=sumTrans+ tran.TransactionAmount;
+            
+            }
+            Console.WriteLine(sumTrans);
+
+
+            if (_dBManager.Categories.Find(1).CategoryGoal < sumTrans)
+                Console.WriteLine("over spent");
+            else
+                Console.WriteLine("good");
+
+            return View();
     }
 
     [HttpPost]
@@ -60,6 +86,8 @@ namespace BudgetPlanner.Controllers
 
       //ViewBag.Users = new SelectList(_dBManager.Users, nameof(Users.Token), nameof(Users.UserName)); ; //For Dropdown
       //ViewBag.UserTransactions = AllTransactions.Where(x => x.Token == 1).ToList();
+
+        
 
 
 
