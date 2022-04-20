@@ -8,12 +8,14 @@
     <thead>
         <tr>
             <th>
+                User ID
+            </th>
+            <th>
                 Transaction Amount
             </th>
             <th>
                 Transaction Date
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,15 +23,13 @@
         {
             <tr>
                 <td width:"50%">
+                    @obj.Token
+                </td>
+                <td width:"30%">
                     @obj.TransactionAmount
                 </td>
                 <td width:"30%">
                     @obj.TransactionDate
-                </td>
-                <td width:"30%">
-                    <div class="w-75 btn-group" role="group">
-
-                    </div>
                 </td>
             </tr>
         }
