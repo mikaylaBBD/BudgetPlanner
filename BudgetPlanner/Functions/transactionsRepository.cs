@@ -18,8 +18,8 @@ namespace BudgetPlanner.Functions
 
             private void connection()
             {
-                string constr = ConfigurationManager.ConnectionStrings["getconn"].ToString();
-                con = new SqlConnection(constr);
+               // string constr = ConfigurationManager.ConnectionStrings["getconn"].ToString();
+                con = new SqlConnection("Data Source = clouddb.cbsozziiwdya.eu - west - 1.rds.amazonaws.com; Initial Catalog = BudgetPlanner; Persist Security Info = True; User ID = group3; Password = password");
 
 
             }
@@ -27,7 +27,7 @@ namespace BudgetPlanner.Functions
             public string AddTransaction(Decimal amount, int account, int category, int token , string date)
             {
                 connection();
-                com = new SqlCommand("addTransaction", con);
+                com = new SqlCommand("dbo.addTransaction", con);
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@Amount", amount);
                 com.Parameters.AddWithValue("@AccountID", account);
