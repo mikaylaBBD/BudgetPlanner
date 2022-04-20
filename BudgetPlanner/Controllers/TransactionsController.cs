@@ -108,10 +108,12 @@ namespace BudgetPlanner.Controllers
         // POST: api/Transactions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Transactions>> PostTransactions(Transactions transactions)
+        public async Task<ActionResult<Transactions>> PostTransactions([FromBody]Transactions transactions)
         {
+            Console.WriteLine(transactions);
             _context.Transactions.Add(transactions);
             await _context.SaveChangesAsync();
+           // var deserialized = serializer.Deserialize<List<TheType>>(TheJson);
             transactionsRepository trans = new transactionsRepository();
             trans.AddTransaction(transactions.TransactionAmount, transactions.AccountID, transactions.CategoryID, transactions.Token, transactions.TransactionDate);
 
