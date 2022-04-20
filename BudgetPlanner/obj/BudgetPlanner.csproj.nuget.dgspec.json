@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {}
+    "C:\\Users\\narom001\\Documents\\BBD Grad Resources\\Level Ups\\C#\\proj\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {
+    "C:\\Users\\narom001\\Documents\\BBD Grad Resources\\Level Ups\\C#\\proj\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
+        "projectUniqueName": "C:\\Users\\narom001\\Documents\\BBD Grad Resources\\Level Ups\\C#\\proj\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
         "projectName": "BudgetPlanner",
-        "projectPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
-        "packagesPath": "C:\\Users\\bbdnet2584\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bbdnet2584\\Desktop\\GradStuff\\Budget Planner\\BudgetPlanner\\BudgetPlanner\\obj\\",
+        "projectPath": "C:\\Users\\narom001\\Documents\\BBD Grad Resources\\Level Ups\\C#\\proj\\BudgetPlanner\\BudgetPlanner\\BudgetPlanner.csproj",
+        "packagesPath": "C:\\Users\\narom001\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\narom001\\Documents\\BBD Grad Resources\\Level Ups\\C#\\proj\\BudgetPlanner\\BudgetPlanner\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bbdnet2584\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\narom001\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
