@@ -15,6 +15,6 @@ namespace BudgetPlanner.Models
 
     public decimal CategoryGoal { get; set; }
 
-    public decimal CategoryProgress { get; set; }
+    public int userID { get; set; }
   }
 }
