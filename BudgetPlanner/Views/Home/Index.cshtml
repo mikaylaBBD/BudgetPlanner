@@ -3,12 +3,13 @@
 }
 
 <tr>
-    <td> Populating With ViewBag Data </td>
+    <td> Select a User </td>
     <td>
-        @Html.DropDownList("MySkills", (IEnumerable
-       <SelectListItem>)ViewBag.Users)
+        @Html.DropDownList("Users", (IEnumerable
+       <SelectListItem>)ViewBag.Users, "Select Users")
     </td>
 </tr>
+<div>
     <div class="h1 mt-5">Categories</div>
     <ul>
         <li>
