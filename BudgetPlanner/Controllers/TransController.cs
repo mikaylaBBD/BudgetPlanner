@@ -16,7 +16,14 @@ namespace BudgetPlanner.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Transactions> transactions = _db.Transactions;
+            IEnumerable<Transactions> transactions = _db.Transactions.Where(x => x.Token == 2).ToList();
+
+
+            if (transactions == null)
+            {
+                return NotFound();
+            }
+
             return View(transactions);
         }
         // GET: api/Transactions/[token] : api/Transactions/5
