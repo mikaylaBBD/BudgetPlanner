@@ -29,15 +29,46 @@ namespace BudgetPlanner.Controllers
             return await _context.Transactions.ToListAsync();
         }
 
-        // GET: api/Transactions/[id] : api/Transactions/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Transactions>> GetTransactions(int id)
+        // GET: api/Transactions/[token] : api/Transactions/5
+        [HttpGet("{token}")]
+        public async Task<List<Transactions>> GetTransactionsByUser(int token)
         {
-            var transactions = await _context.Transactions.FindAsync(id);
+            var transactions = await _context.Transactions.Where(x => x.Token == token).ToListAsync();
+
 
             if (transactions == null)
             {
-                return NotFound();
+                return new List<Transactions>();
+            }
+
+            return transactions;
+        }
+
+        // GET: api/Transactions/[token][categoryID] : api/Transactions/5/1
+        [HttpGet("params")]
+        public async Task<List<Transactions>> GetTransactionsByUserCategory(int token, int categoryID)
+        {
+            var transactions = await _context.Transactions.Where(x => x.Token == token && x.CategoryID == categoryID).ToListAsync();
+
+
+            if (transactions == null)
+            {
+                return new List<Transactions>();
+            }
+
+            return transactions;
+        }
+
+        // GET: api/Transactions/[accountID] : api/Transactions/1
+        [HttpGet("params")]
+        public async Task<List<Transactions>> GetTransactionsByAccount(int accountID)
+        {
+            var transactions = await _context.Transactions.Where(x => x.AccountID == accountID).ToListAsync();
+
+
+            if (transactions == null)
+            {
+                return new List<Transactions>();
             }
 
             return transactions;
