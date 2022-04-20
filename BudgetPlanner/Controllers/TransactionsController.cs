@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BudgetPlanner.Database;
 using BudgetPlanner.Models;
+using BudgetPlanner.Functions;
 
 namespace BudgetPlanner.Controllers
 {
@@ -111,6 +112,8 @@ namespace BudgetPlanner.Controllers
         {
             _context.Transactions.Add(transactions);
             await _context.SaveChangesAsync();
+            transactionsRepository trans = new transactionsRepository();
+            trans.AddTransaction(transactions.TransactionAmount, transactions.AccountID, transactions.CategoryID, transactions.Token, transactions.TransactionDate);
 
             return CreatedAtAction("GetTransactions", new { id = transactions.TransactionID }, transactions);
         }
