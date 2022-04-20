@@ -11,5 +11,7 @@ namespace BudgetPlanner.Models
     public string UserName { get; set; }
     [Key]
     public int Token { get; set; }
+
+    //public int UserId { get; set; }
     }
 }

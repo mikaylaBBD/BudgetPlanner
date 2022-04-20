@@ -13,8 +13,8 @@ namespace BudgetPlanner.Models
 
     public string CategoryName { get; set; }
 
-    //public decimal CategoryGoal { get; set; }
+    public decimal CategoryGoal { get; set; }
 
-    //public decimal CategoryProgress { get; set; }
+    public decimal CategoryProgress { get; set; }
   }
 }
