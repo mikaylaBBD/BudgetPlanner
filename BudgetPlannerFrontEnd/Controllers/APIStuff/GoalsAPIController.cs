@@ -36,25 +36,19 @@ namespace BudgetPlannerFrontEnd.Controllers.APIStuff
       {
         months = "0" + months;
       }
-      var transactions = await _context.Transactions.Where(x => x.Token == token && x.CategoryID == categoryID && x.TransactionDate.Substring(5, 2).Equals(month)).ToListAsync();
+      decimal sumTrans = _context.Transactions.Where(x => x.Token == token && x.CategoryID == categoryID && x.TransactionDate.Substring(5, 2) == months).Sum(t => t.TransactionAmount);
 
-      decimal sumTrans = 0;
+         
 
-      foreach (Transactions tran in transactions)
-      {
-        sumTrans = sumTrans + tran.TransactionAmount;
-
-      }
-
-      List<Goals> x = new List<Goals>();
+            List<Goals> x = new List<Goals>();
 
 
-      if (_context.Categories.Find(categoryID).CategoryGoal < sumTrans)
-        x.Add(new Goals { GoalAmount = _context.Categories.Find(categoryID).CategoryGoal, GoalMet = "Overspent", AmountSpent = sumTrans });
-      else
-        x.Add(new Goals { GoalAmount = _context.Categories.Find(categoryID).CategoryGoal, GoalMet = "Goal not met", AmountSpent = sumTrans });
+            if (_context.Categories.Find(categoryID).CategoryGoal < sumTrans)
+                x.Add(new Goals { GoalAmount = _context.Categories.Find(categoryID).CategoryGoal, GoalMet = "Overspent", AmountSpent = sumTrans });
+            else
+                x.Add(new Goals { GoalAmount = _context.Categories.Find(categoryID).CategoryGoal, GoalMet = "Goal met", AmountSpent = sumTrans });
 
-      return x;
+            return x;
+        }
     }
-  }
 }

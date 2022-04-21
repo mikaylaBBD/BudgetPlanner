@@ -14,9 +14,5 @@ namespace BudgetPlanner.Models
 
     public string AccountType { get; set; }
 
-    public string AccountName { get; set; }
-
-    [ForeignKey("Users")]
-    public int Token { get; set; }
     }
 }

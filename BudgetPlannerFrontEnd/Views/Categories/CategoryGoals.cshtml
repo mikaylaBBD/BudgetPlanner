@@ -6,7 +6,7 @@
 <form method="post" asp-action="CategoryGoals">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Edit Category</h2>
+			<h2 class="text-primary">Enter Category</h2>
 			<hr />
 		</div>
 		@*<div asp-validation-summary="All"></div>*@
@@ -14,10 +14,8 @@
 			<label >Category</label>
 			<input asp-for="CategoryName" class="form-control" />
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Update</button>
-		<a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">
-			Back to List
-		</a>
+		<button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
+		
 	</div>
 </form>
 

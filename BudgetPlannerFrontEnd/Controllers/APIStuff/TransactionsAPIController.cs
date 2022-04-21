@@ -58,7 +58,7 @@ namespace BudgetPlannerFrontEnd.Controllers.APIStuff
     }
 
     // GET: api/Transactions/[accountID] : api/Transactions/1
-    [HttpGet("params")]
+    [HttpGet("param")]
     public async Task<List<Transactions>> GetTransactionsByAccount(int accountID)
     {
       var transactions = await _context.Transactions.Where(x => x.AccountID == accountID).ToListAsync();

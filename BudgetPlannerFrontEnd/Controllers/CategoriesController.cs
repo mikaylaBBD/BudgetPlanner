@@ -38,7 +38,7 @@ namespace BudgetPlannerFrontEnd.Controllers
             }
             else
             {
-                met = "Goal not met";
+                met = "Goal met";
             }
 
             Goals goals = new Goals();
